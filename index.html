@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Impact Solutions | Engineering Clarity, Powered by Intelligence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0A2463;
+            --secondary: #3E92CC;
+            --accent: #1E88E5;
+            --dark: #0D1B2A;
+            --light: #F8F9FA;
+            --gray: #6C757D;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        .nav {
+            position: fixed;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: var(--accent);
+            border-radius: 50%;
+            top: -300px;
+            right: -200px;
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--accent);
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            transform: translateY(-2px);
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--primary);
+        }
+
+        .impact-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .metric-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--light);
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .metric-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent);
+            display: block;
+        }
+
+        .metric-label {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-top: 0.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .service-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .service-description {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .gpt-showcase {
+            background: linear-gradient(135deg, var(--light) 0%, white 100%);
+        }
+
+        .gpt-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .gpt-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .gpt-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .gpt-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .gpt-description {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .gpt-link {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .gpt-link:hover {
+            background: var(--primary);
+        }
+
+        .about {
+            background: var(--primary);
+            color: white;
+        }
+
+        .about .section-title {
+            color: white;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .value-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-item {
+            text-align: center;
+        }
+
+        .value-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .contact {
+            text-align: center;
+            background: var(--light);
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">Clear Impact Solutions</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#tools">AI Tools</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Engineering clarity,<br>powered by intelligence</h1>
+            <p>AI-augmented mechanical engineering services for hardware startups and manufacturers. From concept to production, faster and smarter.</p>
+            <a href="#contact" class="cta-button">Book a Consultation</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="impact-metrics">
+            <div class="metric-card">
+                <span class="metric-number">60%</span>
+                <div class="metric-label">Faster design iteration cycles</div>
+            </div>
+            <div class="metric-card">
+                <span class="metric-number">3x</span>
+                <div class="metric-label">Output scalability</div>
+            </div>
+            <div class="metric-card">
+                <span class="metric-number">40%</span>
+                <div class="metric-label">Reduction in project costs</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <h2 class="section-title">How We Transform Engineering</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">⚙️</div>
+                <h3 class="service-title">Product Systems Engineering</h3>
+                <div class="service-description">
+                    <strong>Problem:</strong> Slow design cycles, manufacturing delays<br>
+                    <strong>Solution:</strong> AI-enhanced CAD, DFM optimization, rapid prototyping<br>
+                    <strong>Result:</strong> 60% faster prototype-to-production timeline
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🤖</div>
+                <h3 class="service-title">Process Workflow Intelligence</h3>
+                <div class="service-description">
+                    <strong>Problem:</strong> Manual, repetitive engineering tasks<br>
+                    <strong>Solution:</strong> Custom GPT development, workflow automation<br>
+                    <strong>Result:</strong> 40-60% reduction in documentation time
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔬</div>
+                <h3 class="service-title">Innovation R&D</h3>
+                <div class="service-description">
+                    <strong>Problem:</strong> Limited internal AI capabilities<br>
+                    <strong>Solution:</strong> Proprietary AI tools for engineering teams<br>
+                    <strong>Result:</strong> Accelerated supplier qualification and component sourcing
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tools" class="section gpt-showcase">
+        <h2 class="section-title">Our AI Engineering Tools</h2>
+        <div class="gpt-grid">
+            <div class="gpt-card">
+                <h3 class="gpt-title">AI FileNamer Pro</h3>
+                <p class="gpt-description">Intelligent file naming system that enforces organizational standards while maintaining human readability for engineering documents.</p>
+                <a href="https://chatgpt.com/g/g-68f8fbee66d88191ab22b4cbc28e04c7-ai-filenamer-pro" target="_blank" class="gpt-link">Try Tool →</a>
+            </div>
+            <div class="gpt-card">
+                <h3 class="gpt-title">PartPilot</h3>
+                <p class="gpt-description">AI-powered CAD component sourcing assistant that accelerates supplier qualification and part specification.</p>
+                <a href="https://chatgpt.com/g/g-68e69a8c0840819189057f18e0e4fba1-partpilot" target="_blank" class="gpt-link">Try Tool →</a>
+            </div>
+            <div class="gpt-card">
+                <h3 class="gpt-title">Validate Hardware Product Idea</h3>
+                <p class="gpt-description">Structured framework for evaluating hardware concepts against market, technical, and business viability criteria.</p>
+                <a href="https://chatgpt.com/g/g-68f9425cd51481918a92b604b5345cf0-validate-hardware-product-idea" target="_blank" class="gpt-link">Try Tool →</a>
+            </div>
+            <div class="gpt-card">
+                <h3 class="gpt-title">FreelanceMechQuoter</h3>
+                <p class="gpt-description">Automated quoting system for mechanical engineering services with intelligent scope detection and pricing optimization.</p>
+                <a href="https://chatgpt.com/g/g-68fa48ea7ee4819190351b9048251f8c-freelancemechquoter" target="_blank" class="gpt-link">Try Tool →</a>
+            </div>
+            <div class="gpt-card">
+                <h3 class="gpt-title">FreelanceEngQuoter Web App</h3>
+                <p class="gpt-description">Full-featured web application for engineering project quoting with real-time calculations and proposal generation.</p>
+                <a href="https://freelance-eng-quoter.lovable.app/" target="_blank" class="gpt-link">Launch App →</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section about">
+        <h2 class="section-title">Why Clear Impact Solutions</h2>
+        <div class="about-content">
+            <p>Founded and led by <strong>Moataz Ibrahim, P.Eng.</strong>, we're a Nova Scotia-based engineering consultancy that combines traditional mechanical design expertise with cutting-edge AI systems.</p>
+            <p>Unlike traditional consultancies adopting AI as an afterthought, our entire service delivery model is built around AI-augmented workflows. This means lower costs, faster turnaround, and higher quality outputs for our clients.</p>
+            
+            <div class="value-list">
+                <div class="value-item">
+                    <h3>Clarity</h3>
+                    <p>Zero ambiguity in design and deliverables</p>
+                </div>
+                <div class="value-item">
+                    <h3>Integrity</h3>
+                    <p>Professional ethics and IP protection</p>
+                </div>
+                <div class="value-item">
+                    <h3>Excellence</h3>
+                    <p>Regulatory and industry standards met</p>
+                </div>
+                <div class="value-item">
+                    <h3>Impact</h3>
+                    <p>Measurable business outcomes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <h2 class="section-title">Ready to Accelerate Your Product Development?</h2>
+        <p style="font-size: 1.2rem; color: var(--gray); max-width: 600px; margin: 0 auto 2rem;">Book a complimentary 30-minute consultation to discuss your project needs and discover how AI-augmented engineering can transform your timeline.</p>
+        <a href="mailto:contact@clearimpactsolutions.ca" class="cta-button">Get in Touch</a>
+        <div class="contact-info">
+            <p><strong>Clear Impact Solutions Inc.</strong></p>
+            <p>Halifax, Nova Scotia, Canada</p>
+            <p>Professional Engineering Services (P.Eng.)</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Clear Impact Solutions Inc. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">Engineering clarity, powered by intelligence.</p>
+    </footer>
+</body>
+</html>
