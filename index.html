@@ -2,32 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Clear Impact Solutions | Engineering Clarity. Powered by Intelligence.</title>
+  <title>Clear Impact Solutions | Your Suppliers Keep Rejecting Your Designs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Clear Impact Solutions Inc. is a Canadian engineering and AI consultancy helping manufacturers and product companies accelerate innovation, eliminate inefficiency, and bring world-class designs to market faster." />
+  <meta name="description" content="Canadian engineering consultancy that fixes the design problems suppliers won't quote. DFM. Documentation. 5 days." />
   <style>
     :root {
-      --bg: #0D1B2A;
-      --bg-light: #F5F6F8;
+      --bg: #0A0E27;
       --primary: #0A2463;
       --accent: #3E92CC;
-      --text: #0D1B2A;
+      --text: #1a1a1a;
       --muted: #6C7A89;
       --white: #fff;
-      --radius: 16px;
-      --max: 1080px;
+      --max: 1100px;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: #fff;
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
     }
     header {
       background: var(--bg);
       color: var(--white);
-      padding: 1.4rem 1rem 0.5rem;
+      padding: 1.2rem 1.5rem 0;
     }
     .nav {
       max-width: var(--max);
@@ -35,374 +33,505 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 1rem;
     }
-    .brand {
-      font-weight: 700;
-      font-size: 1.1rem;
-      letter-spacing: 0.04em;
-    }
+    .brand { font-weight: 700; font-size: 1rem; letter-spacing: 0.02em; }
     nav a {
-      color: rgba(255, 255, 255, 0.85);
+      color: rgba(255, 255, 255, 0.7);
       text-decoration: none;
-      margin-left: 1rem;
+      margin-left: 1.8rem;
       font-size: 0.9rem;
+      transition: color 0.2s;
     }
     nav a:hover { color: #fff; }
+
     .hero {
       max-width: var(--max);
-      margin: 3rem auto 2.5rem;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 2rem;
-      align-items: center;
+      margin: 0 auto;
+      padding: 5rem 1.5rem 6rem;
     }
     .hero h1 {
-      font-size: clamp(2.1rem, 3.3vw, 2.7rem);
-      margin-bottom: 1rem;
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      font-weight: 800;
     }
-    .hero p {
-      margin-bottom: 1.6rem;
-      max-width: 38rem;
-      color: rgba(255, 255, 255, 0.85);
+    .hero .lead {
+      font-size: 1.25rem;
+      color: rgba(255,255,255,0.85);
+      max-width: 680px;
+      margin-bottom: 2.5rem;
+      line-height: 1.5;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
     .btn {
       display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      padding: 0.7rem 1.2rem;
-      border-radius: 999px;
+      padding: 0.85rem 1.6rem;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 1rem;
+      transition: all 0.2s;
     }
-    .btn.secondary {
-      background: rgba(255,255,255,0.08);
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: #2d7bb5;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
       border: 1px solid rgba(255,255,255,0.3);
-      margin-left: 0.6rem;
     }
-    .hero-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 14px;
-      padding: 1.4rem 1.5rem 1.5rem;
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.15);
     }
-    .hero-card h3 { margin-bottom: 0.6rem; }
+
+    .trust-bar {
+      background: rgba(255,255,255,0.05);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 1.5rem 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      text-align: center;
+    }
+    .trust-item strong {
+      display: block;
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 0.2rem;
+    }
+    .trust-item span {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+    }
+
     .section {
-      padding: 4rem 1rem;
+      padding: 5rem 1.5rem;
     }
     .container {
       max-width: var(--max);
       margin: 0 auto;
     }
-    h2.section-title {
-      font-size: 1.6rem;
-      margin-bottom: 1.5rem;
-    }
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 2rem;
-    }
-    .card {
-      background: #fff;
-      border: 1px solid #E0E4E9;
-      border-radius: 16px;
-      padding: 1.5rem 1.4rem 1.5rem;
-    }
-    .muted {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-    ul.clean {
-      list-style: none;
-      margin-top: 0.75rem;
-    }
-    ul.clean li {
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.4rem;
-    }
-    ul.clean li::before {
-      content: "•";
-      color: var(--primary);
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
       font-weight: 700;
     }
-    .offers {
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.1rem;
+      margin-bottom: 3rem;
+      max-width: 680px;
+    }
+
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .pain-card {
+      background: #f8f9fa;
+      border-left: 4px solid var(--accent);
+      padding: 1.8rem;
+      border-radius: 8px;
+    }
+    .pain-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      color: var(--text);
+    }
+    .pain-card p {
+      color: #555;
+      line-height: 1.6;
+    }
+    .pain-card .quote {
+      font-style: italic;
+      color: var(--muted);
+      margin-top: 1rem;
+      padding-left: 1rem;
+      border-left: 2px solid #ddd;
+    }
+
+    .solution-box {
+      background: var(--primary);
+      color: #fff;
+      padding: 3rem;
+      border-radius: 12px;
+      margin: 3rem 0;
+    }
+    .solution-box h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .solution-box ul {
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+    .solution-box li {
+      padding: 0.6rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .solution-box li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .proof-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
-      margin-top: 1.5rem;
     }
-    .offer-title { font-weight: 600; margin-bottom: 0.4rem; }
-    .price { font-weight: 700; margin-top: 0.5rem; }
-    .badge {
-      background: rgba(10,36,99,0.09);
+    .proof-card {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+    .proof-tag {
       display: inline-block;
-      padding: 0.15rem 0.6rem;
-      border-radius: 999px;
-      font-size: 0.65rem;
+      background: #f0f0f0;
+      color: var(--primary);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.3rem 0.7rem;
+      border-radius: 4px;
+      margin-bottom: 0.8rem;
+    }
+    .proof-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .proof-card .result {
+      background: #f8f9fa;
+      padding: 0.8rem;
+      margin-top: 1rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
       font-weight: 600;
       color: var(--primary);
-      margin-bottom: 0.6rem;
     }
-    footer {
-      background: #F1F3F5;
-      padding: 2.5rem 1rem 3rem;
-      margin-top: 3rem;
-    }
-    footer p { font-size: 0.8rem; color: #555; }
-    .two-col-small {
+
+    .pricing-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
+      margin-top: 2rem;
     }
-    @media (max-width: 920px) {
-      .hero, .grid-2, .two-col-small {
-        grid-template-columns: 1fr;
-      }
+    .price-card {
+      background: #fff;
+      border: 2px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+    }
+    .price-card.featured {
+      border-color: var(--accent);
+      transform: scale(1.02);
+    }
+    .price-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+    .price-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .price-card .price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin: 1rem 0;
+    }
+    .price-card ul {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+    .price-card li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: #555;
+    }
+    .price-card li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .cta-section {
+      background: var(--bg);
+      color: #fff;
+      padding: 5rem 1.5rem;
+      text-align: center;
+    }
+    .cta-section h2 {
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .cta-section p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    footer {
+      background: #f8f9fa;
+      padding: 3rem 1.5rem;
+      text-align: center;
+      color: #666;
+      font-size: 0.85rem;
+    }
+    footer strong {
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 3rem 1.5rem 4rem; }
+      h1 { font-size: 2rem !important; }
+      h2 { font-size: 1.6rem; }
+      .trust-bar { gap: 2rem; }
       nav { display: none; }
-      .hero { margin-top: 2.5rem; }
-      .hero-card { margin-bottom: 1rem; }
+      .price-card.featured { transform: none; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER + HERO -->
-  <header id="top">
+  <header>
     <div class="nav">
-      <div class="brand">Clear Impact Solutions Inc.</div>
+      <div class="brand">Clear Impact Solutions</div>
       <nav>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#offers">Engagements</a>
-        <a href="#global">Global & Funding</a>
+        <a href="#problems">Problems</a>
+        <a href="#proof">Proof</a>
+        <a href="#pricing">Pricing</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
 
     <div class="hero">
-      <div>
-        <h1>Engineering Clarity. Powered by Intelligence.</h1>
-        <p>Canadian engineering and AI consultancy helping manufacturers and product companies accelerate innovation, eliminate inefficiency, and launch world-class designs. Built to stay eligible for funding, R&D, and international collaboration.</p>
-        <a href="#contact" class="btn">Book a Discovery Call</a>
-        <a href="#global" class="btn secondary">View Collaboration Areas</a>
+      <h1>Your suppliers keep rejecting your designs.</h1>
+      <p class="lead">We fix the CAD they won't quote. Wall thickness. Draft angles. Tolerances suppliers actually use. Quote-ready DFM packages in 5 days.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Book Discovery Call</a>
+        <a href="#proof" class="btn btn-secondary">See What We Fixed</a>
       </div>
-      <div class="hero-card">
-        <h3>Operating Profile</h3>
-        <p class="muted">Registered Canadian company dedicated to AI-enabled engineering, DFM, and manufacturing modernization.</p>
-        <ul class="clean">
-          <li>Legal name: Clear Impact Solutions Inc.</li>
-          <li>Company No.: 4755824</li>
-          <li>Registered: Nova Scotia, Canada</li>
-          <li>Effective date: 20-Oct-2025</li>
-        </ul>
+    </div>
+
+    <div class="trust-bar">
+      <div class="trust-item">
+        <strong>30+</strong>
+        <span>projects delivered</span>
+      </div>
+      <div class="trust-item">
+        <strong>Same day</strong>
+        <span>rush turnarounds</span>
+      </div>
+      <div class="trust-item">
+        <strong>5.0</strong>
+        <span>client rating</span>
       </div>
     </div>
   </header>
 
-  <!-- WHO WE ARE -->
-  <section id="about" class="section">
-    <div class="container two-col-small">
-      <div>
-        <h2 class="section-title">Who We Are</h2>
-        <p>Clear Impact Solutions Inc. (CIS) works at the intersection of <strong>engineering</strong>, <strong>artificial intelligence</strong>, and <strong>industrial systems</strong>. We help manufacturers, product teams, and public partners move from uncertain ideas to manufacturable, fundable, and partner-ready solutions.</p>
-        <p style="margin-top:1rem;">We design services so they are legible to Canadian innovation programs and attractive to GCC industrial stakeholders. Every project produces documentation, clear scope, and measurable outcomes.</p>
+  <section id="problems" class="section">
+    <div class="container">
+      <h2>You're stuck in a loop.</h2>
+      <p class="subtitle">The same problems keep stopping you from getting quotes, prototypes, or production started.</p>
+
+      <div class="pain-grid">
+        <div class="pain-card">
+          <h3>"Suppliers won't quote this."</h3>
+          <p>Your CAD came back with "not manufacturable" and no explanation. Now you're weeks behind and don't know what to fix.</p>
+          <div class="quote">"I sent it to three shops. All three said no. Nobody told me why."</div>
+        </div>
+
+        <div class="pain-card">
+          <h3>"I need this yesterday."</h3>
+          <p>Your client wants changes by Monday. Your usual designer is booked. You need someone who can turn around drawings in 24 hours without excuses.</p>
+          <div class="quote">"We had to delay the submission because the drawings weren't ready."</div>
+        </div>
+
+        <div class="pain-card">
+          <h3>"This is costing way too much."</h3>
+          <p>The quote came back 3x what you expected. The supplier said it's because of your design. You don't know what they're talking about.</p>
+          <div class="quote">"They quoted $12k. I was expecting $4k. What am I paying for?"</div>
+        </div>
+
+        <div class="pain-card">
+          <h3>"I don't speak engineer."</h3>
+          <p>You have a great product idea but can't communicate it to manufacturers. You need someone to translate your vision into something suppliers understand.</p>
+          <div class="quote">"I know what I want. I just can't draw it."</div>
+        </div>
+
+        <div class="pain-card">
+          <h3>"My estimators are drowning."</h3>
+          <p>Every RFQ is different. Your team spends hours clarifying basics before they can quote. You're losing money on every estimate.</p>
+          <div class="quote">"We spend 2 hours per quote just figuring out what they actually want."</div>
+        </div>
+
+        <div class="pain-card">
+          <h3>"I need this fundable."</h3>
+          <p>You want to apply for grants but need proper documentation, partners, and scope. Your project isn't structured for IRAP or ACOA yet.</p>
+          <div class="quote">"We want to do R&D but we don't know how to package it."</div>
+        </div>
       </div>
-      <div class="card">
-        <h3>Mission</h3>
-        <p class="muted">Empower businesses with clarity and intelligence so every design, decision, and dollar moves toward meaningful impact.</p>
-        <h3 style="margin-top:1.25rem;">Focus Areas</h3>
-        <ul class="clean">
-          <li>Design for Manufacturing (DFM)</li>
-          <li>AI-assisted engineering workflows</li>
-          <li>RFQ and documentation standardization</li>
-          <li>Canada–GCC technical collaboration</li>
+
+      <div class="solution-box">
+        <h3>We solve exactly these problems.</h3>
+        <p>You send us what you have. We send back what suppliers need. No jargon. No delay. Just manufacturable designs with documentation that gets quoted.</p>
+        <ul>
+          <li>DFM fixes (wall thickness, draft, tolerances, assembly)</li>
+          <li>Vendor-ready CAD and drawings (DWG, PDF, STEP)</li>
+          <li>Clear documentation suppliers don't reject</li>
+          <li>Same-day rush available for critical deadlines</li>
+          <li>Plain-language summaries for non-technical clients</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- WHAT WE DO -->
-  <section id="services" class="section" style="background:#F7F8FA;">
+  <section id="proof" class="section" style="background:#f8f9fa;">
     <div class="container">
-      <h2 class="section-title">What We Do</h2>
-      <div class="grid-2">
-        <div class="card">
-          <h3>1. Product Development & DFM</h3>
-          <p class="muted">Make product ideas manufacturable, supplier-ready, and cost-aware.</p>
-          <ul class="clean">
-            <li>Mechanical design and optimization</li>
-            <li>CAD modeling and prototyping support</li>
-            <li>Vendor-ready DFM packs</li>
-            <li>Tolerances, materials, and validation</li>
-          </ul>
+      <h2>What we've fixed.</h2>
+      <p class="subtitle">Real projects. Real results. Client names removed for privacy.</p>
+
+      <div class="proof-grid">
+        <div class="proof-card">
+          <span class="proof-tag">Plastic injection</span>
+          <h3>Modular Utility Station</h3>
+          <p>Founder kept getting rejected. Walls too thin. No draft. Wrong ribs. We rebuilt it in 3 days.</p>
+          <div class="result">✓ Accepted for prototyping</div>
         </div>
-        <div class="card">
-          <h3>2. AI-Driven Process Improvement</h3>
-          <p class="muted">Use AI to remove repetitive engineering work and standardize RFQs.</p>
-          <ul class="clean">
-            <li>Workflow automation for manufacturing teams</li>
-            <li>AI tools for RFQ/quoting/documentation</li>
-            <li>Decision dashboards for engineering KPIs</li>
-          </ul>
+
+        <div class="proof-card">
+          <span class="proof-tag">Metal fabrication</span>
+          <h3>Planters + Benches</h3>
+          <p>Fabricator needed corner radii updates, anchor layouts, and liner adjustments. Same day. Multiple rounds.</p>
+          <div class="result">✓ Submitted on time → repeat client</div>
         </div>
-        <div class="card">
-          <h3>3. Innovation Partnerships & Technical Strategy</h3>
-          <p class="muted">Structure projects so they can be co-funded, co-delivered, and internationally relevant.</p>
-          <ul class="clean">
-            <li>Canada–GCC R&D collaborations</li>
-            <li>Product-market validation</li>
-            <li>Compliance-ready technical documentation</li>
-          </ul>
+
+        <div class="proof-card">
+          <span class="proof-tag">Consumer hardware</span>
+          <h3>Grill Accessory System</h3>
+          <p>Non-technical entrepreneur had sketches. We turned them into bolt-together metal assemblies with mounting instructions.</p>
+          <div class="result">✓ "Exactly how I envisioned it"</div>
         </div>
-        <div class="card">
-          <h3>4. Manufacturing Modernization Support</h3>
-          <p class="muted">Practical pilots for shops and factories that need clean input data.</p>
-          <ul class="clean">
-            <li>RFQ clean-up and standardization</li>
-            <li>Estimator time reduction</li>
-            <li>Supplier communication improvements</li>
-          </ul>
+
+        <div class="proof-card">
+          <span class="proof-tag">Documentation</span>
+          <h3>Stainless Sleeve Cutsheets</h3>
+          <p>Supplier needed professional drawings for client presentation. Metric + imperial. Material callouts. DWG + PDF.</p>
+          <div class="result">✓ Approved without revisions</div>
         </div>
+      </div>
+
+      <div style="margin-top:3rem; padding:2rem; background:#fff; border-radius:8px; border-left:4px solid var(--accent);">
+        <p style="font-size:1.1rem; line-height:1.6; color:#333;">
+          <strong>"Top level of service, quick turnaround times, and good quality work. Would highly recommend."</strong><br>
+          <span style="color:#666; font-size:0.9rem;">— Operations Manager, Construction Products (Canada)</span>
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- FLAGSHIP OFFERS -->
-  <section id="offers" class="section">
+  <section id="pricing" class="section">
     <div class="container">
-      <h2 class="section-title">Flagship Engagements</h2>
-      <p class="muted">Fixed-scope offers designed for speed, clarity, and fundability.</p>
+      <h2>Fixed price. Fixed timeline.</h2>
+      <p class="subtitle">No hourly billing. No scope creep. You know what you're paying before we start.</p>
 
-      <div class="offers" style="margin-top:1.25rem;">
-        <!-- Offer 1 -->
-        <div class="card">
-          <span class="badge">5-Day Sprint</span>
-          <h3 class="offer-title">Idea-to-DFM Starter Sprint</h3>
-          <p>In 5 days you get a quote-ready pack suppliers don’t reject.</p>
-          <ul class="clean">
-            <li>Cleaned CAD and DFM fixes</li>
-            <li>Tolerance and material guidance</li>
-            <li>Vendor shortlist + RFQ email</li>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <span class="price-badge">5 Days</span>
+          <h3>DFM Sprint</h3>
+          <div class="price">$3,000</div>
+          <p style="color:#666;">Quote-ready pack suppliers don't reject.</p>
+          <ul>
+            <li>CAD cleanup + DFM fixes</li>
+            <li>Tolerances and material guidance</li>
+            <li>Vendor shortlist + RFQ template</li>
             <li>Summary report with next steps</li>
           </ul>
-          <p class="price">$3,000 CAD</p>
-          <p class="muted">50% deposit to start</p>
-          <a href="https://buy.stripe.com/YOUR_1500_DEPOSIT_LINK" class="btn" style="margin-top:0.7rem;">Pay $1,500 Deposit</a>
+          <a href="#contact" class="btn btn-primary" style="margin-top:1rem; width:100%; text-align:center;">Start Sprint</a>
+          <p style="margin-top:0.8rem; font-size:0.85rem; color:#999;">50% deposit to start</p>
         </div>
 
-        <!-- Offer 2 -->
-        <div class="card">
-          <span class="badge">2-Week Pilot</span>
-          <h3 class="offer-title">RFQ Clean-Up Pilot</h3>
-          <p>Standardize up to 10 RFQs to save estimator time and improve quote hit-rate.</p>
-          <ul class="clean">
-            <li>Clarified, structured RFQ inputs</li>
+        <div class="price-card featured">
+          <span class="price-badge">2 Weeks</span>
+          <h3>RFQ Clean-Up Pilot</h3>
+          <div class="price">$2,000</div>
+          <p style="color:#666;">Standardize 10 RFQs. Save estimator time.</p>
+          <ul>
+            <li>Clarified, structured inputs</li>
             <li>Supplier-friendly documentation</li>
             <li>Time-saved report</li>
+            <li>Reusable templates</li>
           </ul>
-          <p class="price">$2,000 CAD</p>
-          <p class="muted">100% upfront or 50% deposit</p>
-          <a href="https://buy.stripe.com/YOUR_2000_PILOT_LINK" class="btn" style="margin-top:0.7rem;">Start Pilot</a>
+          <a href="#contact" class="btn btn-primary" style="margin-top:1rem; width:100%; text-align:center;">Start Pilot</a>
+          <p style="margin-top:0.8rem; font-size:0.85rem; color:#999;">100% upfront or 50% deposit</p>
         </div>
 
-        <!-- Offer 3 -->
-        <div class="card">
-          <span class="badge">Advisory</span>
-          <h3 class="offer-title">International Collaboration Setup</h3>
-          <p>Structure engineering and AI projects so they align with Canadian funding and GCC industrial priorities.</p>
-          <ul class="clean">
-            <li>Project definition and partner mapping</li>
+        <div class="price-card">
+          <span class="price-badge">Custom</span>
+          <h3>Funding-Ready Projects</h3>
+          <div class="price">Custom</div>
+          <p style="color:#666;">Structure R&D for IRAP, ACOA, or international partners.</p>
+          <ul>
+            <li>Project definition + partner mapping</li>
             <li>Funding-aligned documentation</li>
             <li>Pilot/POC rollout plan</li>
+            <li>GCC collaboration setup</li>
           </ul>
-          <p class="price">Custom</p>
-          <p class="muted">For government, R&D, and strategic partners</p>
-          <a href="#contact" class="btn" style="margin-top:0.7rem;">Request Proposal</a>
+          <a href="#contact" class="btn btn-secondary" style="margin-top:1rem; width:100%; text-align:center;">Request Proposal</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GLOBAL + FUNDING -->
-  <section id="global" class="section" style="background:#F5F6F8;">
+  <section class="cta-section" id="contact">
     <div class="container">
-      <h2 class="section-title">Global, GCC, and Funding Alignment</h2>
-      <p class="muted">Built to work with Canadian programs and GCC industrial stakeholders.</p>
-      <div class="grid-2" style="margin-top:1.5rem;">
-        <div class="card">
-          <h3>Canadian Funding Readiness</h3>
-          <p class="muted">CIS is structured to operate inside Canada’s R&D and export ecosystem.</p>
-          <ul class="clean">
-            <li>Atlantic Canada Opportunities Agency (ACOA)</li>
-            <li>National Research Council – IRAP</li>
-            <li>SR&ED (technical documentation support)</li>
-            <li>CanExport and internationalization programs</li>
-          </ul>
-          <p class="muted" style="margin-top:0.5rem;">Projects produce the technical detail, timelines, and outcome metrics that funders look for.</p>
-        </div>
-        <div class="card">
-          <h3>GCC & Saudi Partnerships</h3>
-          <p class="muted">We support GCC manufacturers, EPCs, and engineering services providers that are:</p>
-          <ul class="clean">
-            <li>Localizing manufacturing</li>
-            <li>Digitizing RFQ and estimation</li>
-            <li>Exploring AI for production</li>
-            <li>Co-developing with Canadian firms</li>
-          </ul>
-          <p class="muted" style="margin-top:0.5rem;">CIS can act as the Canadian technical counterpart for Saudi or wider GCC initiatives.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LEADERSHIP -->
-  <section id="leadership" class="section">
-    <div class="container two-col-small">
-      <div>
-        <h2 class="section-title">Leadership</h2>
-        <p><strong>Founder & Director:</strong> Moataz Ibrahim, P.Eng.</p>
-        <p class="muted" style="margin-top:0.5rem;">Canadian Professional Engineer with 7+ years in mechanical design, DFM, product development, and manufacturing support. Experience across Michelin North America, Outdoor-Fit, Protocase, and Neocon.</p>
-        <p style="margin-top:0.8rem;">Combines engineering depth with AI-enabled systems thinking to deliver fast, fundable outcomes for SMEs, manufacturers, and international partners.</p>
-      </div>
-      <div class="card">
-        <h3>How to Engage</h3>
-        <ul class="clean">
-          <li>Discovery Call → scope your challenge</li>
-          <li>Receive a CIS proposal</li>
-          <li>Start a 5-day Sprint or 2-week Pilot</li>
-        </ul>
-        <a href="#contact" class="btn" style="margin-top:1rem;">Book Discovery Call</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT / CTA -->
-  <section id="contact" class="section" style="background:#0D1B2A; color:#fff;">
-    <div class="container">
-      <h2 class="section-title">Start a Project</h2>
-      <p style="max-width:40rem; color:rgba(255,255,255,0.8);">Tell us if you need DFM support, RFQ standardization, or a Canada–GCC technical partner. We will respond with a scoped, CIS-branded proposal.</p>
-
-      <!-- Calendly embed placeholder -->
-      <div style="margin-top:1.5rem;">
-        <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR_CALENDLY/25min" style="min-width:320px;height:620px;background:#fff;border-radius:16px;"></div>
+      <h2>Stop getting rejected.</h2>
+      <p>Book a 25-minute call. We'll scope your problem and tell you if we can fix it.</p>
+      
+      <div style="margin:2rem auto; max-width:900px;">
+        <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR_CALENDLY/25min" style="min-width:320px;height:630px;background:#fff;border-radius:12px;"></div>
         <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
       </div>
 
-      <p style="margin-top:1.5rem;">Or email: <a href="mailto:info@clearimpactsolutions.com" style="color:#fff; text-decoration:underline;">info@clearimpactsolutions.com</a></p>
+      <p>Or email: <a href="mailto:info@clearimpactsolutions.com" style="color:#3E92CC; text-decoration:underline;">info@clearimpactsolutions.com</a></p>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container">
-      <p><strong>Clear Impact Solutions Inc.</strong> – Engineering Clarity. Powered by Intelligence.</p>
-      <p>Registered in Nova Scotia, Canada. Company Number: 4755824.</p>
-      <p>GST/HST Registration: Pending. All services structured to support eligibility for Canadian innovation, export, and R&D programs, and for international industrial collaboration (GCC, Saudi Arabia, and partner jurisdictions).</p>
-      <p style="margin-top:0.8rem;">© 2025 Clear Impact Solutions Inc. All rights reserved.</p>
+      <p><strong>Clear Impact Solutions Inc.</strong> – Canadian engineering consultancy. P.Eng.-led.</p>
+      <p>Nova Scotia, Canada. Company No. 4755824.</p>
+      <p style="margin-top:1rem;">© 2025 Clear Impact Solutions Inc.</p>
     </div>
   </footer>
 
