@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Clear Impact Solutions | Your Estimators Are Wasting 2 Hours Per Quote</title>
+  <title>Clear Impact Solutions | Suppliers Keep Rejecting Your CAD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="We standardize messy RFQs so your estimators stop chasing specs and start quoting. 2-week pilot. Privacy-safe. P.Eng.-led." />
+  <meta name="description" content="Your manufacturer said no. We fix the CAD they won't quote. Quote-ready packs in 5 days. P.Eng.-led." />
   <style>
     :root {
       --bg: #0A0E27;
@@ -66,6 +66,7 @@
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
+      margin-bottom: 3rem;
     }
     .btn {
       display: inline-block;
@@ -162,58 +163,149 @@
       margin-top: 1rem;
       padding-left: 1rem;
       border-left: 2px solid #ddd;
+      font-size: 0.95rem;
     }
 
-    .pilot-section {
-      background: var(--primary);
-      color: #fff;
-      padding: 4rem 2rem;
-      border-radius: 12px;
-      margin: 3rem 0;
+    .packages-showcase {
+      margin-top: 3rem;
     }
-    .pilot-grid {
+    .package-grid {
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 3rem;
-      align-items: start;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
     }
-    .pilot-section h3 {
-      font-size: 1.8rem;
+    .package-card {
+      background: #fff;
+      border: 2px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+      transition: all 0.2s;
+    }
+    .package-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .package-card.featured {
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(62, 146, 204, 0.15);
+    }
+    .package-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
       margin-bottom: 1rem;
     }
-    .pilot-section ul {
-      list-style: none;
-      margin-top: 1.5rem;
+    .package-badge.starter {
+      background: #6C7A89;
     }
-    .pilot-section li {
-      padding: 0.6rem 0;
+    .package-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.6rem;
+    }
+    .package-card .tagline {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .package-card ul {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+    .package-card li {
+      padding: 0.5rem 0;
       padding-left: 1.5rem;
       position: relative;
+      color: #555;
+      font-size: 0.95rem;
     }
-    .pilot-section li::before {
+    .package-card li::before {
       content: "✓";
       position: absolute;
       left: 0;
       color: var(--accent);
       font-weight: bold;
-      font-size: 1.2rem;
     }
-    .pilot-card {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 8px;
-      padding: 2rem;
-    }
-    .pilot-card .price {
-      font-size: 2.5rem;
+    .package-card .price {
+      font-size: 2rem;
       font-weight: 800;
-      margin: 1rem 0;
+      color: var(--primary);
+      margin: 1.5rem 0 0.5rem;
+    }
+    .package-card .timeline {
+      color: #666;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .addons-section {
+      margin-top: 3rem;
+      padding: 2rem;
+      background: #f8f9fa;
+      border-radius: 12px;
+    }
+    .addons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .addon-card {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    .addon-card strong {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: var(--primary);
+    }
+    .addon-card span {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .guarantee-box {
+      background: var(--primary);
+      color: #fff;
+      padding: 2.5rem;
+      border-radius: 12px;
+      margin-top: 3rem;
+    }
+    .guarantee-box h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+    .guarantee-box ul {
+      list-style: none;
+    }
+    .guarantee-box li {
+      padding: 0.8rem 0;
+      padding-left: 2rem;
+      position: relative;
+      line-height: 1.6;
+    }
+    .guarantee-box li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 1.3rem;
     }
 
     .proof-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
+      margin-top: 2rem;
     }
     .proof-card {
       background: #fff;
@@ -233,7 +325,29 @@
     }
     .proof-card h3 {
       font-size: 1.1rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
+    }
+    .proof-card p {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .proof-card ul {
+      list-style: none;
+      margin-top: 0.8rem;
+    }
+    .proof-card li {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 0.4rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .proof-card li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
     }
     .proof-card .result {
       background: #f8f9fa;
@@ -249,7 +363,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.5rem;
-      margin-top: 2rem;
+      margin-top: 2.5rem;
     }
     .testimonial {
       background: #fff;
@@ -302,7 +416,7 @@
       h2 { font-size: 1.6rem; }
       .trust-bar { gap: 2rem; }
       nav { display: none; }
-      .pilot-grid { grid-template-columns: 1fr; }
+      .package-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -313,133 +427,199 @@
       <div class="brand">Clear Impact Solutions</div>
       <nav>
         <a href="#problem">The Problem</a>
-        <a href="#pilot">RFQ Pilot</a>
+        <a href="#packages">Packages</a>
         <a href="#proof">Proof</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
 
     <div class="hero">
-      <h1>Your estimators are wasting 2 hours per quote.</h1>
-      <p class="lead">Missing dimensions. No material specs. Unclear tolerances. We standardize your RFQs so your team stops chasing information and starts quoting.</p>
+      <h1>Suppliers keep rejecting your CAD.</h1>
+      <p class="lead">We fix the designs they won't quote. Wall thickness. Draft angles. Tolerances suppliers actually use. Quote-ready manufacturing packs in 5 days.</p>
       <div class="hero-cta">
-        <a href="#pilot" class="btn btn-primary">Start 2-Week RFQ Pilot</a>
-        <a href="#proof" class="btn btn-secondary">See What We Fixed</a>
+        <a href="#packages" class="btn btn-primary">See Packages</a>
+        <a href="#proof" class="btn btn-secondary">Proof of Work</a>
       </div>
     </div>
 
     <div class="trust-bar">
       <div class="trust-item">
-        <strong>30+</strong>
-        <span>manufacturers served</span>
+        <strong>5 days</strong>
+        <span>quote-ready packs</span>
       </div>
       <div class="trust-item">
-        <strong>Privacy-safe</strong>
-        <span>AI-assisted, P.Eng.-led</span>
+        <strong>Same-day rush</strong>
+        <span>when you need it yesterday</span>
       </div>
       <div class="trust-item">
-        <strong>2 weeks</strong>
-        <span>pilot to results</span>
+        <strong>P.Eng.-led</strong>
+        <span>privacy-safe, AI-assisted</span>
       </div>
     </div>
   </header>
 
   <section id="problem" class="section">
     <div class="container">
-      <h2>Every RFQ is a scavenger hunt.</h2>
-      <p class="subtitle">Your estimators know the drill. And it's killing your margins.</p>
+      <h2>You're stuck in a loop.</h2>
+      <p class="subtitle">The same problems keep stopping you from getting quotes.</p>
 
       <div class="pain-grid">
         <div class="pain-card">
-          <h3>"What material is this?"</h3>
-          <p>Drawing says "steel." Which steel? What grade? What finish? Your estimator emails the customer. Radio silence. Two days lost.</p>
-          <div class="quote">"We can't quote without knowing if it's hot-rolled, cold-rolled, or stainless."</div>
+          <h3>"Suppliers won't quote this."</h3>
+          <p>Your CAD came back with "not manufacturable" and no explanation. Now you're weeks behind.</p>
+          <div class="quote">"Three shops said no. Nobody told me why."</div>
         </div>
 
         <div class="pain-card">
-          <h3>"These dimensions don't make sense."</h3>
-          <p>Missing views. Contradicting measurements. No tolerances. Your estimator has to guess or call. Either way, you're not quoting yet.</p>
-          <div class="quote">"I spent an hour trying to figure out if this was inches or millimeters."</div>
+          <h3>"I need this yesterday."</h3>
+          <p>Your client wants changes by Monday. Your designer is booked. You need someone who turns around drawings in 24 hours.</p>
+          <div class="quote">"We delayed the submission because the drawings weren't ready."</div>
         </div>
 
         <div class="pain-card">
-          <h3>"We're losing quotes to clarification delays."</h3>
-          <p>By the time you get answers, the customer went with someone faster. You didn't lose on price. You lost on speed.</p>
-          <div class="quote">"They accepted a higher quote because the other shop responded same-day."</div>
+          <h3>"This is costing way too much."</h3>
+          <p>The quote came back 3x what you expected. The supplier said it's your design. You don't know what they mean.</p>
+          <div class="quote">"They quoted $12k. I was expecting $4k."</div>
         </div>
 
         <div class="pain-card">
-          <h3>"Our hit rate is terrible."</h3>
-          <p>You quote blind because you can't wait for answers. Half the time your assumptions are wrong. Customer picks someone else.</p>
-          <div class="quote">"We quoted for 304 stainless. They wanted 316. We were 30% off."</div>
-        </div>
-
-        <div class="pain-card">
-          <h3>"My estimators are drowning."</h3>
-          <p>Every RFQ is different. No standards. No templates. Your team reinvents the wheel 20 times a week.</p>
-          <div class="quote">"I'm not estimating anymore. I'm playing detective."</div>
-        </div>
-
-        <div class="pain-card">
-          <h3>"We can't scale like this."</h3>
-          <p>More RFQs means more chaos. You can't hire fast enough. You can't train new estimators when there's no system.</p>
-          <div class="quote">"We turned down work because we couldn't process the RFQs fast enough."</div>
-        </div>
-      </div>
-
-      <div class="pilot-section">
-        <div class="pilot-grid">
-          <div>
-            <h3>We fix this in 2 weeks.</h3>
-            <p>Send us your messiest 10 RFQs. We'll standardize them into supplier-ready packages with clear materials, complete dimensions, and proper callouts.</p>
-            <p style="margin-top:1rem;">Your estimators get back 2 hours per quote. Your customers get faster responses. Your shop wins more work.</p>
-            <ul>
-              <li>Standardized RFQ template for your shop</li>
-              <li>Drawing cleanup (views, dims, tolerances)</li>
-              <li>Material and finish specs clarified</li>
-              <li>Before/after examples for your team</li>
-              <li>Repeatable intake process you can use forever</li>
-            </ul>
-          </div>
-          <div class="pilot-card">
-            <h4 style="margin-bottom:0.5rem;">RFQ Clean-Up Pilot</h4>
-            <p style="font-size:0.9rem; color:rgba(255,255,255,0.8);">Up to 10 RFQs standardized</p>
-            <div class="price">$2,000</div>
-            <p style="font-size:0.9rem; color:rgba(255,255,255,0.8); margin-bottom:1.5rem;">100% upfront or 50% deposit</p>
-            <a href="#contact" class="btn btn-primary" style="width:100%; text-align:center;">Start Pilot</a>
-            <p style="margin-top:1rem; font-size:0.85rem; color:rgba(255,255,255,0.7);">Privacy-safe. Remote-friendly. P.Eng.-led.</p>
-          </div>
+          <h3>"I don't speak engineer."</h3>
+          <p>You have a great product idea but can't communicate it to manufacturers. You need someone to translate your vision.</p>
+          <div class="quote">"I know what I want. I just can't draw it."</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="proof" class="section" style="background:#f8f9fa;">
+  <section id="packages" class="section" style="background:#f8f9fa;">
     <div class="container">
-      <h2>What we've cleaned up.</h2>
+      <h2>Pick what you need. Skip what you don't.</h2>
+      <p class="subtitle">Fixed price. Clear scope. Add extras only if you want them.</p>
+
+      <div class="package-grid">
+        <div class="package-card">
+          <div class="package-badge starter">Starter</div>
+          <h3>3D Model Only</h3>
+          <p class="tagline">For vendors who only need a solid model or when you're still concepting.</p>
+          <ul>
+            <li>Parametric CAD from sketches/photos</li>
+            <li>STEP export (vendor-standard)</li>
+            <li>Optional STL for 3D print</li>
+            <li>One minor revision</li>
+          </ul>
+          <div class="price">$750</div>
+          <p class="timeline">Add drawings/DXF anytime</p>
+          <a href="#contact" class="btn btn-primary" style="width:100%; text-align:center;">Start</a>
+        </div>
+
+        <div class="package-card featured">
+          <div class="package-badge">Most Popular</div>
+          <h3>Design-to-Quote Pack</h3>
+          <p class="tagline">Everything your manufacturer expects in one drop. Most clients start here.</p>
+          <ul>
+            <li>3D CAD + STEP</li>
+            <li>Manufacturing drawings (PDF/DWG)</li>
+            <li>DXF/flat patterns if needed</li>
+            <li>RFQ email template + checklist</li>
+            <li>One full revision after feedback</li>
+          </ul>
+          <div class="price">$1,950</div>
+          <p class="timeline">5 business days typical</p>
+          <a href="#contact" class="btn btn-primary" style="width:100%; text-align:center;">Book This</a>
+        </div>
+
+        <div class="package-card">
+          <div class="package-badge">Pro</div>
+          <h3>Full Manufacturing Pack</h3>
+          <p class="tagline">For teams who want fewer back-and-forths and clearer specs.</p>
+          <ul>
+            <li>Everything in Design-to-Quote</li>
+            <li>GD&T / tolerance table</li>
+            <li>BOM + material/finish notes</li>
+            <li>Supplier shortlist + intro email</li>
+            <li>Two revision cycles</li>
+          </ul>
+          <div class="price">$3,250</div>
+          <p class="timeline">7-10 business days</p>
+          <a href="#contact" class="btn btn-primary" style="width:100%; text-align:center;">Request Proposal</a>
+        </div>
+
+        <div class="package-card">
+          <div class="package-badge">Elite</div>
+          <h3>Grant/Investor Ready</h3>
+          <p class="tagline">Manufacturing pack plus the dossier for incubators and grants.</p>
+          <ul>
+            <li>Everything in Full Manufacturing</li>
+            <li>Micro dossier (problem, solution, TRL, budget)</li>
+            <li>NDA template + signing flow</li>
+            <li>1-page pilot/POC plan</li>
+          </ul>
+          <div class="price">Custom</div>
+          <p class="timeline">Best for funded startups</p>
+          <a href="#contact" class="btn btn-primary" style="width:100%; text-align:center;">Talk to Us</a>
+        </div>
+      </div>
+
+      <div class="addons-section">
+        <h3>Add-Ons (pick only what you need)</h3>
+        <div class="addons-grid">
+          <div class="addon-card">
+            <strong>Extra drawing sheet</strong>
+            <span>Detail views, sections, GD&T</span>
+          </div>
+          <div class="addon-card">
+            <strong>DXF/Router pack</strong>
+            <span>Layer/kerf per vendor</span>
+          </div>
+          <div class="addon-card">
+            <strong>STL + print notes</strong>
+            <span>Orientation, supports, infill</span>
+          </div>
+          <div class="addon-card">
+            <strong>Exploded view + 3D PDF</strong>
+            <span>Easy review for non-engineers</span>
+          </div>
+          <div class="addon-card">
+            <strong>Supplier shortlist</strong>
+            <span>3 vendors + intro template</span>
+          </div>
+          <div class="addon-card">
+            <strong>Compliance brief</strong>
+            <span>CSA/CE landscape (info only)</span>
+          </div>
+          <div class="addon-card">
+            <strong>48-hour rush</strong>
+            <span>Limited availability</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="guarantee-box">
+        <h3>Our Guarantees</h3>
+        <ul>
+          <li><strong>File-Acceptance Guarantee:</strong> If your supplier can't open our files, we re-export/fix within 48 hours at no charge.</li>
+          <li><strong>Clarity Guarantee:</strong> If your first supplier rejects due to documentation quality, we update the pack once free.</li>
+          <li><strong>Same-Day Response:</strong> We reply within one business day or we comp an add-on drawing sheet.</li>
+        </ul>
+        <p style="margin-top:1.5rem; font-size:0.9rem; color:rgba(255,255,255,0.8);">Note: We provide engineering design and documentation. We are not a law firm. NDA and grant materials are templates for your review.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="proof" class="section">
+    <div class="container">
+      <h2>What we've fixed.</h2>
       <p class="subtitle">Real projects. Client names removed for privacy.</p>
 
       <div class="proof-grid">
         <div class="proof-card">
-          <span class="proof-tag">RFQ Standardization</span>
-          <h3>Fabricator Intake Process</h3>
-          <p>Standardized RFQ template and drawing cleanup for a metal shop losing hours to incomplete specs.</p>
-          <ul style="list-style:none; margin-top:0.8rem; color:#555;">
-            <li style="margin-bottom:0.4rem;">→ Shop-tailored template</li>
-            <li style="margin-bottom:0.4rem;">→ Material/finish clarification</li>
-            <li style="margin-bottom:0.4rem;">→ Dimension standardization</li>
-          </ul>
-          <div class="result">✓ Clearer inputs → faster quotes</div>
-        </div>
-
-        <div class="proof-card">
           <span class="proof-tag">Rush Documentation</span>
           <h3>Planters & Benches</h3>
-          <p>Multiple revision rounds (corner radii, anchoring, wall thickness) inside 24 hours so partner could submit on deadline.</p>
-          <ul style="list-style:none; margin-top:0.8rem; color:#555;">
-            <li style="margin-bottom:0.4rem;">→ 3D + 2D sets (DWG/PDF)</li>
-            <li style="margin-bottom:0.4rem;">→ Anchoring layout</li>
-            <li style="margin-bottom:0.4rem;">→ Same-day turnaround</li>
+          <p>Multiple rounds (corner radii, anchoring, wall thickness) inside 24 hours so partner could submit on deadline.</p>
+          <ul>
+            <li>3D + 2D sets (DWG/PDF)</li>
+            <li>Anchoring layout</li>
+            <li>Same-day turnaround</li>
           </ul>
           <div class="result">✓ On-time → repeat client</div>
         </div>
@@ -447,23 +627,35 @@
         <div class="proof-card">
           <span class="proof-tag">DFM Rebuild</span>
           <h3>Plastic Utility Station</h3>
-          <p>Supplier-rejected CAD rebuilt with proper wall thickness, draft angles, and drainage logic.</p>
-          <ul style="list-style:none; margin-top:0.8rem; color:#555;">
-            <li style="margin-bottom:0.4rem;">→ 2.5-3mm walls</li>
-            <li style="margin-bottom:0.4rem;">→ Draft + rib structure</li>
-            <li style="margin-bottom:0.4rem;">→ Quote-ready package</li>
+          <p>Supplier-rejected CAD rebuilt with proper wall thickness, draft angles, drainage logic.</p>
+          <ul>
+            <li>2.5-3mm walls</li>
+            <li>Draft + rib structure</li>
+            <li>Quote-ready package</li>
           </ul>
           <div class="result">✓ Accepted for prototyping</div>
         </div>
 
         <div class="proof-card">
+          <span class="proof-tag">Consumer Hardware</span>
+          <h3>Grill Accessory System</h3>
+          <p>Sketched concept turned into manufacturable bolt-together assemblies with adjustable shelves.</p>
+          <ul>
+            <li>Assembly views (3D PDF)</li>
+            <li>Mounting to existing equipment</li>
+            <li>Plain language explanations</li>
+          </ul>
+          <div class="result">✓ "Exactly how I envisioned it"</div>
+        </div>
+
+        <div class="proof-card">
           <span class="proof-tag">Technical Documentation</span>
           <h3>Stainless Steel Cutsheets</h3>
-          <p>Client-facing drawings in metric and imperial with material callouts and full manufacturing detail.</p>
-          <ul style="list-style:none; margin-top:0.8rem; color:#555;">
-            <li style="margin-bottom:0.4rem;">→ Dual-unit drawings</li>
-            <li style="margin-bottom:0.4rem;">→ Material specifications</li>
-            <li style="margin-bottom:0.4rem;">→ DWG + PDF package</li>
+          <p>Client-facing drawings in metric and imperial with material callouts and full detail.</p>
+          <ul>
+            <li>Dual-unit drawings</li>
+            <li>Material specifications</li>
+            <li>DWG + PDF package</li>
           </ul>
           <div class="result">✓ Approved without revisions</div>
         </div>
@@ -486,46 +678,10 @@
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <h2>How it works.</h2>
-      <p class="subtitle">Simple. Fixed price. No surprises.</p>
-
-      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:2rem; margin-top:2rem;">
-        <div style="padding:1.5rem; background:#f8f9fa; border-radius:8px;">
-          <h3 style="margin-bottom:0.5rem;">1. Kickoff Call</h3>
-          <p style="color:#555;">Send us 10 RFQs (worst ones first). We review your current process and pain points.</p>
-        </div>
-        <div style="padding:1.5rem; background:#f8f9fa; border-radius:8px;">
-          <h3 style="margin-bottom:0.5rem;">2. We Clean</h3>
-          <p style="color:#555;">We standardize drawings, clarify specs, create templates. You review as we go.</p>
-        </div>
-        <div style="padding:1.5rem; background:#f8f9fa; border-radius:8px;">
-          <h3 style="margin-bottom:0.5rem;">3. You Quote Faster</h3>
-          <p style="color:#555;">Get cleaned RFQs, reusable templates, and a repeatable intake system.</p>
-        </div>
-      </div>
-
-      <div style="margin-top:3rem; padding:2rem; background:#f8f9fa; border-radius:8px;">
-        <h3 style="margin-bottom:1rem;">Also available:</h3>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
-          <div>
-            <h4 style="margin-bottom:0.5rem;">ClearBuild™</h4>
-            <p style="color:#555; font-size:0.95rem;">Done-for-you CAD and DFM when you need designs fixed fast. 5-day sprints from $3,000.</p>
-          </div>
-          <div>
-            <h4 style="margin-bottom:0.5rem;">ClearFlow™</h4>
-            <p style="color:#555; font-size:0.95rem;">Custom AI tools for your internal team when you want to build capability in-house. Scoped on request.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="cta-section" id="contact">
     <div class="container">
-      <h2>Stop losing quotes to slow turnarounds.</h2>
-      <p>Book a 25-minute call. We'll look at your RFQs and tell you exactly what we'd fix.</p>
+      <h2>Stop getting rejected.</h2>
+      <p>Book a 25-minute call. We'll look at what you have and tell you exactly what we'd fix.</p>
       
       <div style="margin:2rem auto; max-width:900px;">
         <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR_CALENDLY/25min" style="min-width:320px;height:630px;background:#fff;border-radius:12px;"></div>
@@ -538,8 +694,9 @@
 
   <footer>
     <div class="container">
-      <p><strong>Clear Impact Solutions Inc.</strong> – We standardize messy RFQs.</p>
-      <p>Nova Scotia, Canada. Company No. 4755824. P.Eng.-led. Privacy-safe.</p>
+      <p><strong>Clear Impact Solutions Inc.</strong> – We fix the CAD suppliers reject.</p>
+      <p>Nova Scotia, Canada. Company No. 4755824. P.Eng.-led.</p>
+      <p style="margin-top:0.5rem; font-size:0.75rem; color:#888;">Built to work with Canadian innovation programs (ACOA, NRC-IRAP, SR&ED) and GCC industrial partners.</p>
       <p style="margin-top:1rem;">© 2025 Clear Impact Solutions Inc.</p>
     </div>
   </footer>
